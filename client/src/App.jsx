@@ -11,7 +11,7 @@ function Navbar({ isHome }) {
   const pos = isHome ? "relative" : "fixed top-0 left-0";
   return (
     <nav className={`${base} ${pos}`}>
-      <h1 className="text-2xl font-semibold text-white">Med_App</h1>
+      <h1 className="text-2xl font-semibold text-white">med_app</h1>
       <div className="space-x-6">
         <Link to="/" className="text-white hover:text-gray-300">
           Home
