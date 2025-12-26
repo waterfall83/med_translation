@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* hide scrollbar for chrome and safari */
+  .no-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  /* hide scrollbar for edge and firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Optional: apply globally to html/body while still allowing scroll */
+  html, body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100dvh;               /* ensure full device viewport height (handles mobile UI bars) */
+  margin: 0;
+  overflow: hidden;                 /* disable scrolling */
+  background-color: #111827;        /* tailwind neutral-900 — prevents a different-color "lip" at the top */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar (works on Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Prevent accidental scroll gaps */
+body {
+  overflow: hidden;
+}
